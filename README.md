@@ -72,10 +72,11 @@ The rest of this guide is contained in these chapters:
    - [Makefiles](2-build-systems/make/README.md)
    - [CMake](2-build-systems/cmake/README.md)
 3. C++old versus C++new
-4. C++ and Python
-5. Compiler errors
-6. C++ metaprogramming
-6. Resources
+4. Integrating Other C++ Code
+5. C++ and Python
+6. Compiler errors
+7. C++ metaprogramming
+8. Resources
 
 
 

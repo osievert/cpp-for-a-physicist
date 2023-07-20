@@ -3,20 +3,46 @@
 Similar to Java, but unlike Python, C++ is a compiled language. You must compile the source code
 into an executable binary before you can run the code. The development process looks like:
 - write C++ source code in one or more source files
-- compile the source code
+- compile the source code, using a build system
 - run the compiled code
 - repeat until the code runs as expected
 
+To compile code means to read the source code and translate that into machine code - the actual
+hardware instruction set of the computer.
+
+In the C++ world, compiled code can take a couple of forms. You can compile your code into an
+executable - a program that you can run. This program might be a command line executable that you
+use in a terminal, or the program might open a Window and provide a graphical user interface. You can
+also compile C++ code into a library. A library is a collection of compiled code that doesn't
+have a main function and so cannot be executed by itself. Libraries are linked with 
+compiled code that defines a main function in order to produce an executable.
+
 ## Libraries
 
-Before talking about build systems, let's talk about libraries, which are one of the things a build
-system creates and manages.
+Libraries are not a required part of the build process. In the hello-world example, we did not first
+compile that source into a library and then create an executable from the library. Instead we just
+compiled that source code directly into an executable. We could have created a function called
+`greet()` which printed to std::cout, compiled that function into a library, and then linked that
+library with our `main()` function to create the hello executable. But that seems like a lot to do
+for such a simple program.
 
-C++ can be compiled directly into an application, or it can be compiled into a library which is
-subsequently linked into an application. The term "compile" means to read the source code and
-translate it into native machine code. If this machine code is an executable file, there is no need
-to do anything more, but it is possible to compile C++ source code into binary machine code that is
-not executable. When that happens, the file that is produced is a library. There are two kinds of
+So when should code be compiled into a library, and when should it be compiled into an executable?
+Libraries give you some choices about how you organize, build, and share your code. Your `main()`
+function is always compiled into an executable, but if you are building a complicated program, then
+it is common to break down your program into several parts, each of which is a library that is
+linked together with the `main()` function into the final executable. You might do that just to
+manage the complexity of your code base, but there are other reasons that a program might be broken
+down into libraries. Perhaps each of the libraries in your program is authored by a different
+person. Perhaps the source code for each of these libraries is stored and managed each in its own
+github repository, and the authors of these libraries don't know each other, and don't know you. In
+this sort of a situation, the library authors still need to be able to compile their code and make
+sure it works correctly. They don't know you exist and so can't rely on you to do this for them.
+This is a common situation where a library is used. Each author organizes their source code and
+creates a build system that produces a library. They can link that library with their own test
+program to make sure the library works as intended. But you can also link your own `main()` function
+with those libraries to create your program.
+
+There are two kinds of
 libraries that C++ can produce:
 - a static library
 - a dynamic (sometimes called shared) library
