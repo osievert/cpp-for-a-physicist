@@ -26,7 +26,7 @@ that the hello rule depends on. In this case, a single file `main.cpp`. More tha
 be specified here. If more than one file is specified, they are separated by a space character.
 
 On the next line you see the action that this rule runs - a call to the `g++` compiler. This command
-is only executed if the rule's input (the file `main.cpp``) is newer than the rule's output. What
+is only executed if the rule's input (the file `main.cpp`) is newer than the rule's output. What
 is the rule's output? It is a file whose name is the same as the name of the rule. In this case, a
 file named `hello`. Every rule can have only one output, for the purposes of dependency management.
 But rule actions can create as many files as they want, and can call as many actions (commands) as
