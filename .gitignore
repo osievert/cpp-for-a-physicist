@@ -1,3 +1,5 @@
+.vscode
+
 # Prerequisites
 *.d
 
@@ -6,6 +8,9 @@
 *.lo
 *.o
 *.obj
+*.a
+app
+hello
 
 # Precompiled Headers
 *.gch
