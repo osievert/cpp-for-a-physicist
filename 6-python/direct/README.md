@@ -67,7 +67,7 @@ To clean up after all of this, you can:
 - exit the virtual environment by typing `deactivate`
 
 A couple of things to note about all of this:
-- The C++ functions are enclosed in an `etern "C"` block. This tells the compiler that the
+- The C++ functions are enclosed in an `extern "C"` block. This tells the compiler that the
   functions have C linkage, meaning that even though this is a C++ file the function
   declarations should be compiled as C code. Python extension functions must be C functions,
   although the function implementations can be C++.

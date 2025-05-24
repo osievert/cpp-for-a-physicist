@@ -27,7 +27,7 @@ Prefer it in all your google searches for information about the C++ language.
 
 Matt Godbolt's [Compiler Explorer](https://godbolt.org/) is the best place to play with C++ in a
 [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)-like environment. Here you can
-write some simple C++ code, compile it, and run it. You can also view hte machine code that the compiler
+write some simple C++ code, compile it, and run it. You can also view the machine code that the compiler
 emitted. This turns out to be quite helpful in understanding just how smart the compiler is, and what kinds
 of optimizations it can make while compiling your code.
 

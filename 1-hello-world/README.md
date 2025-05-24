@@ -47,9 +47,9 @@ especially unlucky you will have to deal with C++ code that inconsistently uses 
 
 ## Directory Structure
 
-Java build tools have over time adopted a very rigid directory structure. If you follow the Java
-gospel, then the Java build tools will grace you with an easy build process. If you don't follow
-the Java gospel then you are excommunicated and not allowed to program Java.
+Java build tools have over time adopted a very rigid directory structure. If you follow the gospel,
+then the Java build tools will grace you with an easy build process. If you don't follow the gospel
+then you are excommunicated and not allowed to program Java.
 
 Python has a few of its own conventions / requirements regarding directory structure, mostly around
 how Python modules are defined.

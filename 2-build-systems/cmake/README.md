@@ -31,29 +31,40 @@ at generation time, and other things are done at build time. One of the main sou
 with CMake is thinking that something you tell CMake to do happens at build time, when in fact it
 happens at generation time.
 
-If CMake generates a build system, what build system does it generate? By default, on macOS and Linux
-CMake will generate a `make` build system unless told to do something else. On Windows, CMake will
-generate a Visual Studio build system by default (if Visual Studio is installed). But CMake supports
-several other build systems that you can ask for - ninja and Xcode are popular build systems that CMake
-supports.
+All CMake configuration starts in a file named `CMakeLists.txt` that is located in the root
+directory of your code repository. To use CMake, you should make that root directory your current
+working directory. Then you run CMake to create create a build directory, and then you can ask CMake
+to execute the build system it generated. The following commands show how to do this, assuming you
+have a code repository named `cool_new_cpp_code` that contains a `CMakeLists.txt` file in its root
+directory:
 
-When running CMake to generate a build system, the one required parameter is a path to the directory
-that contains the top-level CMakeLists.txt file. All CMake configuration starts in one or more
-CMakeLists.txt files. It is extremely common for the root directory of a code repository contains a
-CMakeLists.txt file, os a very common way to build C++ code with CMake is:
 ```
 cd cool_new_cpp_code
-mkdir build
-cd build
-cmake ..
-make
+cmake -B build
+cmake --build build
 ```
 
-This series of terminal commands navigates to a code repository, creates a `build` directory, and inside
-this build directory executes CMake (telling it to look for a CMakeLists.txt file in the root directory
-of the code repository). Since we are on macOS or Linux, CMake generated a make build system (wrote a
-Makefile, along with a bunch of other supporting files). After cmake generated the make build system,
-we just have to type `make` to build the project.
+The generated build system, and all the build outputs, will be placed in the `build` directory.
+
+Since we are on macOS or Linux, CMake generated a `make` build system (wrote a Makefile, along with
+a bunch of other supporting files). After cmake generated the make build system, you can build by
+asking CMake to execute the build like shown above, or you can change your working directory to the
+build directory and just type `make` to build the project.
+
+By default, on macOS and Linux CMake will generate a `make` build system unless told to do something
+else. On Windows, CMake will generate a Visual Studio build system by default (if Visual Studio is
+installed). But CMake supports several other build systems that you can ask for - Ninja and Xcode
+are popular build systems that CMake supports. To specify a build system you use the `-G` command
+line argument to CMake. For example, to generate a ninja build system you would run, in the root
+directory of your code repository:
+```
+cmake  -B build-G Ninja
+```
+which tells cmake to generate a ninja build system in the `build` directory. You can ask CMake to
+build this project the same was as bwfore, but you can also change your working directory
+to the `build` directory and type `ninja` to build the project.
+
+## Context
 
 In this directory we have a copy of the hello main.cpp file from chapter 1. We also have a complete,
 but extremely simple CMakeLists.txt file. These two files are a complete example of a CMake-based

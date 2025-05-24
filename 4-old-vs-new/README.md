@@ -1,7 +1,7 @@
 # C++ Old vs New
 
-C++ is a very old language, but in the last decade it has evollved quite a lot. Modern C++ doesn't
-look a lot like C++old. This section illustrates some of the differences, so when you look at C++
+C++ is a very old language, but in the last decade it has evolved quite a lot. Modern C++ doesn't
+look muchlike C++old. This section illustrates some of the differences, so when you look at C++
 you can read it whether it is old or new.
 
 ## Type declarations
@@ -45,9 +45,9 @@ The reasons modern C++ prefers brace initialization include:
 - the equals sign invites implicit type conversion
 
 Implicit type conversion happens when the compiler has a value of one type, and it needs to assign
-that to a variable which is a different type. For may such type conversions, the compiler has rules
+that to a variable which is a different type. For many such type conversions, the compiler has rules
 that it follows to convert one type into another type. Implicit type conversion is generally thought
-to be a problem, not an advantege, because
+to be a problem, not an advantage, because
 - It happens implicitly, behind the scenes. It is not obvious looking at the source code that a type
   conversion is happening
 - Implicit type conversions are mysterious, and it is not uncommon for an unexpected conversion to
@@ -102,7 +102,12 @@ class Foo
 public:
     Foo() { a = 1; b = 3.14; }
     Foo(int a) : a(a) {}
-    static auto create() -> Foo { Foo f; f.a = 2; f.b = 3.14; return f; }
+    static auto create() -> Foo {
+        Foo f;
+        f.a = 2;
+        f.b = 3.14;
+        return f;
+    }
 protected:
     int a;
     double b;
