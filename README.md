@@ -69,18 +69,18 @@ You will need the [CMake](https://cmake.org/) meta-build system. You might also 
 
 The rest of this guide is contained in these chapters:
 
-0. [VS Code](0-vscode/README.md)
-1. [Hello, world.](1-hello-world/README.md)
-2. [Build systems](2-build-systems/README.md)
-   - [Makefiles](2-build-systems/make/README.md)
-   - [CMake](2-build-systems/cmake/README.md)
-3. [Libraries](3-libraries/README.md)
-4. [C++old versus C++new](4-old-vs-new/README.md)
-5. [Dependencies](5-dependencies/README.md)
-6. [C++ and Python](6-python/README.md)
+0. [VS Code](00-vscode/README.md)
+1. [Hello, world.](01-hello-world/README.md)
+2. [Build systems](02-build-systems/README.md)
+   - [Makefiles](02-build-systems/make/README.md)
+   - [CMake](02-build-systems/cmake/README.md)
+3. [Libraries](03-libraries/README.md)
+4. [C++old versus C++new](04-old-vs-new/README.md)
+5. [Dependencies](05-dependencies/README.md)
+6. [C++ and Python](06-python/README.md)
 7. Compiler errors (TODO)
 8. C++ metaprogramming (TODO)
-9. [Resources](9-resources/README.md)
+9. [Resources](09-resources/README.md)
 10. [Extras](10-extra/README.md)
 
 
